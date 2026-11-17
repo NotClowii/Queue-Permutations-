@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class QueuePermComb {
+public class QueuePermutations {
 public static void main(String[] args) {
 Scanner sc = new Scanner(System.in);
     Queue<String> queue = new LinkedList<>();
@@ -51,40 +51,6 @@ Scanner sc = new Scanner(System.in);
     }
 
     System.out.println("\nTotal Permutations: " + count);
-
-    Queue<String> letters2 = new LinkedList<>();
-    letters2.add("A");
-    letters2.add("B");
-    letters2.add("C");
-    letters2.add("D");
-    System.out.println("\nQueue: " + letters2);
-
-    System.out.print("Enter number of elements to select: ");
-    int k = sc.nextInt();
-    System.out.println();
-    Queue<String> combos = new LinkedList<>();
-    combos.add("");
-
-    for (int round = 0; round < k; round++) {
-    int size = combos.size();
-    for (int i = 0; i < size; i++) {
-        String current = combos.poll();
-        for (String letter : letters2) {
-
-        if (current.isEmpty()
-            || current.substring(current.length() - 1).compareTo(letter) < 0) {
-            combos.add(current + letter);
-        }
-    }
-}
-    }
-
-    count = 0;
-    while (!combos.isEmpty()) {
-    System.out.println(combos.poll());
-    count++;
-    }
-    System.out.println("\nTotal Combinations: " + count);
     sc.close();
     }
 }
